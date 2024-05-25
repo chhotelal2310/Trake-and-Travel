@@ -41,6 +41,9 @@ const connect = async () => {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
+app.get("/test",(req,res)=>{
+    res.send("hello i am from server")
+})
 app.use('/api/v1/auth',authRoute)
 app.use('/api/v1/tours',tourRoute);
 app.use('/api/v1/users',userRoute);
